@@ -15,20 +15,23 @@ namespace WebApplication1.Controllers
             _deliveriesService = deliveriesService;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetTrips()
-        {
-            var dostawa = await _deliveriesService.GetDeliveries();
-            return Ok(dostawa);
-        }
-
         [HttpGet("{id}")]
         public async Task<IActionResult> GetDeliveries(int deliveryId)
         {
-            // if( await DoesTripExist(id)){
-            //  return NotFound();
-            // }
-            // var trip = ... GetTrip(id);
+            if (deliveryId == null)
+            {
+                return BadRequest();
+            }
+            
+            var delivery = await _deliveriesService.GetDeliveries();
+            
+            return Ok(delivery);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit()
+        {
+           
             return Ok();
         }
     }

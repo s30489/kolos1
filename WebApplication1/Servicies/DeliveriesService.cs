@@ -37,6 +37,6 @@ public class DeliveriesService : IDeliveriesService
 
         public Task<List<DeliveriesDTO>> GetDeliveries()
         {
-            throw new NotImplementedException();
+            throw new Exception();
         }
 }
