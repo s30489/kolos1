@@ -8,6 +8,7 @@ public class Program
 
         
         builder.Services.AddAuthorization();
+        builder.Services.AddControllers();
 
         
         builder.Services.AddEndpointsApiExplorer();
